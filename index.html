@@ -886,6 +886,196 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* ── TELEGRAM NOTICE ── */
+    .tg-notice {
+      background: linear-gradient(135deg, rgba(0,136,204,0.1), rgba(40,232,136,0.06));
+      border: 1px solid rgba(0,136,204,0.3);
+      border-radius: 24px;
+      padding: 44px 48px;
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .tg-notice-icon {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: rgba(0,136,204,0.15);
+      border: 1px solid rgba(0,136,204,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: #29b6f6;
+      flex-shrink: 0;
+    }
+    .tg-notice-body { flex: 1; min-width: 240px; }
+    .tg-notice-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .tg-notice-body p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+    .tg-notice-body p strong { color: var(--text); font-weight: 600; }
+    .tg-notice-steps { display: flex; flex-direction: column; gap: 12px; }
+    .tg-step {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.88rem; color: var(--muted);
+    }
+    .tg-step-n {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: rgba(0,136,204,0.15);
+      border: 1px solid rgba(0,136,204,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: #29b6f6;
+      flex-shrink: 0;
+    }
+    .tg-notice-btn {
+      align-self: center;
+      white-space: nowrap;
+    }
+
+    /* ── PHONE MOCKUPS ── */
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .phone-frame {
+      background: #1a1a2e;
+      border-radius: 36px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 6px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 0 0 8px 8px;
+      z-index: 10;
+    }
+    .phone-frame:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 50px 90px rgba(0,0,0,0.5);
+    }
+
+    .phone-top-bar {
+      background: #0d1117;
+      padding: 18px 16px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .phone-back { color: var(--muted); font-size: 1.1rem; cursor: pointer; }
+    .phone-contact { flex: 1; display: flex; align-items: center; gap: 10px; }
+    .phone-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .phone-name {
+      font-weight: 700; font-size: 0.88rem;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .online-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    .phone-sub { font-size: 0.72rem; color: var(--muted); margin-top: 1px; }
+    .phone-more { color: var(--muted); font-size: 1.2rem; }
+
+    .phone-msgs {
+      flex: 1;
+      background: #0f1923;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .time-stamp {
+      text-align: center;
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin: 4px 0 8px;
+      opacity: 0.7;
+    }
+
+    .bubble {
+      max-width: 82%;
+      padding: 10px 14px;
+      border-radius: 18px;
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+    .bubble.them {
+      background: #1e2c3a;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      color: #d0dde8;
+    }
+    .bubble.me {
+      background: linear-gradient(135deg, #1a5c38, #145030);
+      border-bottom-right-radius: 4px;
+      align-self: flex-end;
+      color: #c8f0d8;
+      text-align: right;
+    }
+
+    .earn-pill {
+      align-self: center;
+      background: rgba(240,192,64,0.12);
+      border: 1px solid rgba(240,192,64,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 6px;
+    }
+
+    .phone-input-bar {
+      background: #0d1117;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .phone-input-fake {
+      flex: 1;
+      background: #1e2c3a;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 100px;
+      padding: 9px 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .phone-send {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+      color: #0a0d0b;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1000px) {
       .hero-visual { display: none; }
@@ -920,7 +1110,7 @@
       <li><a href="#how">How it works</a></li>
       <li><a href="#teach">What you teach</a></li>
       <li><a href="#earnings">Earnings</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#conversations">Real Chats</a></li>
     </ul>
     <a class="nav-cta" href="https://t.me/foeign_bot" target="_blank">Start Earning →</a>
   </nav>
@@ -1175,105 +1365,127 @@
     </div>
   </section>
 
-  <!-- PRICING (to join) -->
-  <section id="pricing">
-    <div class="reveal">
-      <div class="section-tag">Activation Fee</div>
-      <h2>One small fee,<br><em>unlimited earning</em></h2>
-      <p class="section-desc">Pay once to activate your earner account. Then keep all your daily earnings — no commissions, no hidden cuts.</p>
-    </div>
-    <div class="pricing-wrap reveal">
-      <div class="price-card">
-        <div class="price-plan">Starter</div>
-        <div class="price-amount">KSh 200 <span>/ week</span></div>
-        <div class="price-desc">Try it out for 7 days</div>
-        <ul class="price-features">
-          <li>7 days full access</li>
-          <li>Match with foreign students</li>
-          <li>Earn per session</li>
-          <li>M-Pesa daily payout</li>
-        </ul>
-        <a href="https://t.me/foeign_bot" target="_blank" class="price-btn outline">Get Started</a>
+  <!-- TELEGRAM NOTICE -->
+  <section>
+    <div class="tg-notice reveal">
+      <div class="tg-notice-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.012 9.483c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.875.738z"/></svg>
       </div>
-
-      <div class="price-card featured">
-        <div class="popular-badge">⭐ Most Popular</div>
-        <div class="price-plan">Pro</div>
-        <div class="price-amount">KSh 500 <span>/ month</span></div>
-        <div class="price-desc">Best value — earn every day</div>
-        <ul class="price-features">
-          <li>30 days full access</li>
-          <li>Priority student matching</li>
-          <li>Higher session rates</li>
-          <li>M-Pesa daily payout</li>
-          <li>Earner community access</li>
-        </ul>
-        <a href="https://t.me/foeign_bot" target="_blank" class="price-btn solid">Start Earning →</a>
+      <div class="tg-notice-body">
+        <h3>📱 You need a Telegram account to get started</h3>
+        <p>All sessions happen on <strong>Telegram</strong> — the world's most popular messaging app. It's free to download. If you don't have an account yet, create one in under 2 minutes, then tap the button below to join Foeign and start earning.</p>
+        <div class="tg-notice-steps">
+          <div class="tg-step"><span class="tg-step-n">1</span> Download Telegram from the App Store or Google Play (it's free)</div>
+          <div class="tg-step"><span class="tg-step-n">2</span> Sign up with your phone number</div>
+          <div class="tg-step"><span class="tg-step-n">3</span> Tap "Start Earning" — our bot will guide you from there</div>
+        </div>
       </div>
-
-      <div class="price-card">
-        <div class="price-plan">Annual</div>
-        <div class="price-amount">KSh 4,500 <span>/ year</span></div>
-        <div class="price-desc">Save 25% — serious earners</div>
-        <ul class="price-features">
-          <li>365 days full access</li>
-          <li>All Pro features</li>
-          <li>Top earner badge</li>
-          <li>Early access to new features</li>
-          <li>Priority support</li>
-        </ul>
-        <a href="https://t.me/foeign_bot" target="_blank" class="price-btn outline">Get Annual</a>
-      </div>
+      <a class="btn-gold tg-notice-btn" href="https://t.me/foeign_bot" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.012 9.483c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.875.738z"/></svg>
+        Start Earning
+      </a>
     </div>
   </section>
 
-  <!-- MPESA -->
-  <section id="pay">
+  <!-- CONVERSATION SCREENSHOTS -->
+  <section id="conversations">
     <div class="reveal">
-      <div class="section-tag">Payment</div>
-      <h2>Pay via M-Pesa,<br><em>start earning today</em></h2>
+      <div class="section-tag">Real Conversations</div>
+      <h2>See what <em>real chats</em> look like</h2>
+      <p class="section-desc">These are the kinds of sessions you'll have — fun, easy, and paid. Foreigners love learning from real Kenyans.</p>
     </div>
-    <div class="mpesa-box reveal">
-      <div class="mpesa-left">
-        <div class="mpesa-steps">
-          <div class="mpesa-step">
-            <div class="mpesa-step-num">1</div>
-            <div class="mpesa-step-text">
-              <h4>Open M-Pesa</h4>
-              <p>Go to M-Pesa on your phone and select "Send Money"</p>
+
+    <div class="screens-grid reveal">
+
+      <!-- Chat 1: Kiswahili lesson -->
+      <div class="phone-frame">
+        <div class="phone-top-bar">
+          <div class="phone-back">&#8592;</div>
+          <div class="phone-contact">
+            <div class="phone-avatar" style="background:linear-gradient(135deg,#4a9eff,#7b5ea7)">🇩🇪</div>
+            <div>
+              <div class="phone-name">Klaus M. <span class="online-dot"></span></div>
+              <div class="phone-sub">Germany · Learning Kiswahili</div>
             </div>
           </div>
-          <div class="mpesa-step">
-            <div class="mpesa-step-num">2</div>
-            <div class="mpesa-step-text">
-              <h4>Send Activation Amount</h4>
-              <p>Enter the number below and send your chosen plan amount</p>
-            </div>
-          </div>
-          <div class="mpesa-step">
-            <div class="mpesa-step-num">3</div>
-            <div class="mpesa-step-text">
-              <h4>Copy Your M-Pesa Code</h4>
-              <p>You'll get an SMS like "Confirmed. RG47XY1234..." — copy that code</p>
-            </div>
-          </div>
-          <div class="mpesa-step">
-            <div class="mpesa-step-num">4</div>
-            <div class="mpesa-step-text">
-              <h4>Send Code to Bot</h4>
-              <p>Paste the code in the Telegram bot — access activates within minutes and you start earning!</p>
-            </div>
-          </div>
+          <div class="phone-more">⋮</div>
+        </div>
+        <div class="phone-msgs">
+          <div class="time-stamp">Today, 2:14 PM</div>
+          <div class="bubble them">Hujambo! I want to learn how to greet people properly in Swahili 🙏</div>
+          <div class="bubble me">Habari! Great choice 😄 In Kiswahili, greetings depend on the time of day. "Habari za asubuhi" means Good morning!</div>
+          <div class="bubble them">Oh nice! What about afternoon?</div>
+          <div class="bubble me">That's "Habari za mchana" 🌤️ And evening is "Habari za jioni". The reply is always "Nzuri" — meaning "Good!"</div>
+          <div class="bubble them">Habari za jioni! 😄 Am I saying it right?</div>
+          <div class="bubble me">Perfectly! 🎉 Karibu sana — you're very welcome! We'll practice more tomorrow.</div>
+          <div class="earn-pill">💰 KSh 150 earned for this session</div>
+        </div>
+        <div class="phone-input-bar">
+          <div class="phone-input-fake">Message…</div>
+          <div class="phone-send">➤</div>
         </div>
       </div>
-      <div class="mpesa-right">
-        <div class="mpesa-display">
-          <div class="mpesa-label">Send M-Pesa to</div>
-          <div class="mpesa-num">0712 XXX XXX</div>
-          <div class="mpesa-name">Account Name: Your Name</div>
-          <div class="mpesa-amount">KSh 500 / month</div>
+
+      <!-- Chat 2: Kenyan food -->
+      <div class="phone-frame">
+        <div class="phone-top-bar">
+          <div class="phone-back">&#8592;</div>
+          <div class="phone-contact">
+            <div class="phone-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ffa500)">🇺🇸</div>
+            <div>
+              <div class="phone-name">Sarah T. <span class="online-dot"></span></div>
+              <div class="phone-sub">USA · Kenyan Culture</div>
+            </div>
+          </div>
+          <div class="phone-more">⋮</div>
+        </div>
+        <div class="phone-msgs">
+          <div class="time-stamp">Today, 11:02 AM</div>
+          <div class="bubble them">I'm visiting Nairobi next month! What food MUST I try? 🍽️</div>
+          <div class="bubble me">Oh you're in for a treat! 🔥 First — nyama choma. It's roasted goat or beef, eaten with ugali and kachumbari salad. It's THE Kenyan experience.</div>
+          <div class="bubble them">What is ugali? I keep hearing that word!</div>
+          <div class="bubble me">Ugali is our staple food — made from maize flour and water, cooked thick like a dough. You eat it with your hands and use it to scoop stew 😋</div>
+          <div class="bubble them">With hands?? 😂 I love it already. Any street food?</div>
+          <div class="bubble me">Yes! Try mutura (Kenyan sausage) and mandazi — fried dough similar to donuts. You'll find them everywhere for under KSh 20!</div>
+          <div class="bubble them">This is SO helpful thank you so much!! 🙌</div>
+          <div class="earn-pill">💰 KSh 200 earned for this session</div>
+        </div>
+        <div class="phone-input-bar">
+          <div class="phone-input-fake">Message…</div>
+          <div class="phone-send">➤</div>
         </div>
       </div>
+
+      <!-- Chat 3: Sheng & slang -->
+      <div class="phone-frame">
+        <div class="phone-top-bar">
+          <div class="phone-back">&#8592;</div>
+          <div class="phone-contact">
+            <div class="phone-avatar" style="background:linear-gradient(135deg,#28e888,#0090ff)">🇫🇷</div>
+            <div>
+              <div class="phone-name">Luca B. <span class="online-dot"></span></div>
+              <div class="phone-sub">France · Kenyan Slang</div>
+            </div>
+          </div>
+          <div class="phone-more">⋮</div>
+        </div>
+        <div class="phone-msgs">
+          <div class="time-stamp">Yesterday, 7:45 PM</div>
+          <div class="bubble them">Someone called me "mzungu" today — is that bad?? 😅</div>
+          <div class="bubble me">Haha no no! 😂 "Mzungu" just means a white/foreign person. It's not an insult — Kenyans use it casually and affectionately!</div>
+          <div class="bubble them">Oh phew 😂 What are some cool Kenyan slang words?</div>
+          <div class="bubble me">Okay! "Sawa" = Okay/Alright. "Poa" = Cool. "Mambo?" = What's up? And the answer is "Poa!" 🤙</div>
+          <div class="bubble them">Mambo?? 😄</div>
+          <div class="bubble me">Poa kabisa! 🔥 That means "Very cool!" — you're already speaking like a Nairobian!</div>
+          <div class="bubble them">This is the most fun lesson I've ever had 😭❤️</div>
+          <div class="earn-pill">💰 KSh 150 earned for this session</div>
+        </div>
+        <div class="phone-input-bar">
+          <div class="phone-input-fake">Message…</div>
+          <div class="phone-send">➤</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
